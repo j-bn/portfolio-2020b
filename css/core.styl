@@ -1,0 +1,197 @@
+brand-dark = #2c3e50
+brand-neutral = #34495e
+brand-web = #3498db
+brand-aero = #d35400
+brand-photo = #2ecc71
+brand-light = #bdc3c7
+brand-lighter = #ecf0f1
+
+slide-padding = 2rem
+
+jobs-highlight-duration = 0.3s
+jobs-text-fade-duration = 0.2s
+jobs-expand-duration = 0.5s
+jobs-transition-duration = jobs-text-fade-duration + jobs-expand-duration
+slide-fade-duration = 0.4s
+
+job-color(prop)
+	&.web
+		{prop}: brand-web
+		
+	&.aero
+		{prop}: brand-aero
+		
+	&.photo
+		{prop}: brand-photo
+
+*
+	margin: 0
+	padding: 0
+	
+	// Include border and padding within box sizes
+	box-sizing: border-box
+	
+a	
+	// Reset
+	color: inherit
+	text-decoration: none
+
+.slide a.close-button
+	opacity: 0.5
+	font-size: 2.5em
+	
+	position: absolute
+	top: slide-padding
+	right: slide-padding
+	
+	display: block
+	vertical-align: top
+	
+	&:hover
+		opacity: 0.7
+		
+	&:active
+		opacity: 0.9
+
+html, body
+	height: 100%
+
+body
+	font-family: 'Nunito', sans-serif
+	background-color: brand-dark
+	color: white
+	
+	// Centre slide container
+	display: flex
+	justify-content: center
+	
+#slide-container
+	max-width: 700px
+	
+	display: block
+	flex-grow: 1
+
+	// Root for slide positioning
+	position: relative
+	
+.slide
+	background-color: brand-neutral
+	job-color(background-color)
+
+	// Stack slides
+	z-index: 1
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+
+	// Sticky footer wrapper
+	min-height: 100%
+	display: grid
+	grid-template-rows: auto
+	
+	// Hide by default
+	opacity: 0
+	
+	// Transition (fade out)
+	// ease in and delay to improve seamlessness
+	transition: opacity slide-fade-duration ease
+
+	> article
+		padding: slide-padding
+		background-color: inherit
+		
+		h1
+			font-size: 2em
+
+		h2
+			opacity: 0.6
+			
+		ul
+			margin: 1rem 0
+			list-style: none
+			
+			li
+				display: inline-block
+				margin-right: 1rem
+	
+	> footer
+		// Display above slide
+		z-index: 10
+
+		// Padding added by children
+		padding: 0
+		
+.slide.active, .slide#landing
+	// Transition (fade in) with delay
+	transition-delay: jobs-transition-duration
+
+	// Show
+	opacity: 1
+	
+// .slide.hide
+// 	z-index: -1
+// 	display: none
+	
+.slide#landing
+	z-index: 0
+	
+	grid-template-rows: 1fr auto
+
+#jobs > a
+	display: block
+
+	color: white
+	font-size: 1.5rem
+	font-weight: bold
+	text-align: left
+	
+	padding: 2rem slide-padding
+
+	// Specific color
+	job-color(background-color)
+	
+	// Transitions
+	// not starting expanstion until text is faded out to avoid text stretching
+	transition: padding jobs-highlight-duration ease-out,
+				color jobs-text-fade-duration,
+				transform jobs-expand-duration jobs-text-fade-duration
+
+	// Hover effect
+	&:hover
+		padding-left: slide-padding + 1rem
+		
+	// Selected effect
+	&.selected
+		// Invisible text
+		job-color(color)
+		
+		// Scale up without affecting layout
+		transform: scaleY(15)
+		
+		
+.masonry
+	margin-top: 1.5rem
+
+	columns: 6 200px
+	column-gap: 0.7rem
+	max-width: calc(100% + 5px)
+	margin-left: -5px
+		
+	> a
+		display: block
+		flex: 1 1 auto
+		margin-bottom: 0.4rem
+		
+		img
+			width: 100%
+			border-radius: 0.4rem
+			box-shadow: 0 1px 0.6rem rgba(black, 0.3)
+			background-color: white
+			padding: 0.3rem
+
+.loading
+	opacity: 0.5
+	
+
+		

@@ -1,0 +1,750 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"jam",
+				"jamesthorntonuk"
+			],
+			[
+				"brand",
+				"brand-red"
+			],
+			[
+				"bran",
+				"brand-gray-light"
+			],
+			[
+				"udpate",
+				"updateActivePage"
+			],
+			[
+				"pointer",
+				"pointer-events"
+			],
+			[
+				"home",
+				"homeNode"
+			],
+			[
+				"optNo",
+				"optNodeID"
+			],
+			[
+				"curNod",
+				"curNodeID"
+			],
+			[
+				"opt",
+				"optNodeID"
+			],
+			[
+				"cur",
+				"curNodeID"
+			],
+			[
+				"destNo",
+				"destNodeID"
+			],
+			[
+				"origin",
+				"originNodeID"
+			],
+			[
+				"clim",
+				"climateNormals"
+			],
+			[
+				"climat",
+				"climateLimits"
+			],
+			[
+				"cli",
+				"click"
+			],
+			[
+				"climate",
+				"climateNormals"
+			],
+			[
+				"peak",
+				"peakThreshold"
+			],
+			[
+				"detect",
+				"detectTempoPreFiltered"
+			],
+			[
+				"active",
+				"activeVolume"
+			],
+			[
+				"anal",
+				"analyzeAudio"
+			],
+			[
+				"the",
+				"theoreticalTempo"
+			],
+			[
+				"filter",
+				"filteredBuffer"
+			],
+			[
+				"detec",
+				"detectedTempo"
+			],
+			[
+				"interva",
+				"intervalCounts"
+			],
+			[
+				"filt",
+				"filteredBuffer"
+			],
+			[
+				"audi",
+				"audioBuffer"
+			],
+			[
+				"other",
+				"otherNodeID"
+			],
+			[
+				"first",
+				"firstNodeID"
+			],
+			[
+				"near",
+				"nearbyStations"
+			],
+			[
+				"cityList",
+				"cityListNames"
+			],
+			[
+				"canvas",
+				"canvasID"
+			],
+			[
+				"stab",
+				"stabilisationOn"
+			],
+			[
+				"sta",
+				"stabilisationOn"
+			],
+			[
+				"tore",
+				"torqueDemand"
+			],
+			[
+				"max",
+				"maxThrusterAngleAttitude"
+			],
+			[
+				"torq",
+				"torqueDemand"
+			],
+			[
+				"matri",
+				"matrixMethod"
+			],
+			[
+				"Matri",
+				"MatrixToString"
+			],
+			[
+				"torque",
+				"torqueDemandMatrix"
+			],
+			[
+				"Vec",
+				"Vector3"
+			],
+			[
+				"drive",
+				"driveThruster"
+			],
+			[
+				"thrott",
+				"thrusterCount"
+			],
+			[
+				"thruster",
+				"thrusterShipTorqueMatrix"
+			],
+			[
+				"throttle",
+				"throttleMatrix"
+			],
+			[
+				"torqu",
+				"torqueDemandMatrix"
+			],
+			[
+				"tor",
+				"torqueDemand"
+			],
+			[
+				"return",
+				"returnRect"
+			],
+			[
+				"thru",
+				"thrustDemand"
+			],
+			[
+				"ship",
+				"shipThrust"
+			],
+			[
+				"P_",
+				"P_solar_array_max"
+			],
+			[
+				"m_solar",
+				"m_solar_array_unit"
+			],
+			[
+				"r_taper",
+				"r_taper_min_combined"
+			],
+			[
+				"r_tap",
+				"r_taper_min"
+			],
+			[
+				"c_bo",
+				"c_body_min_b"
+			],
+			[
+				"r_",
+				"r_aerofoil_thickness"
+			],
+			[
+				"Q_inter",
+				"Q_internal_invariant_max"
+			],
+			[
+				"Q_internal_invara",
+				"Q_internal_invariant_min"
+			],
+			[
+				"inc_rotor",
+				"inc_rotor_low"
+			],
+			[
+				"inc_rot",
+				"inc_rotor_stall"
+			],
+			[
+				"n_",
+				"n_payload_activation"
+			],
+			[
+				"P_motor",
+				"P_motors_tr"
+			],
+			[
+				"XRotor",
+				"XRotorRadiusA"
+			],
+			[
+				"V_",
+				"V_in"
+			],
+			[
+				"m_lowest",
+				"m_lowest_case"
+			],
+			[
+				"Q_",
+				"Q_planetary_surface_max"
+			],
+			[
+				"Q_pl",
+				"Q_planetary_surface_min"
+			],
+			[
+				"E_",
+				"E_planetary_surface_max"
+			],
+			[
+				"E_planet",
+				"E_planetary_surface_min"
+			],
+			[
+				"T_atm",
+				"T_atm_min"
+			],
+			[
+				"Q_in",
+				"Q_internal_invariant_max"
+			],
+			[
+				"Q_intern",
+				"Q_internal_propulsion_max"
+			],
+			[
+				"Q_cond",
+				"Q_conducted_max"
+			],
+			[
+				"Q_conducted",
+				"Q_conducted_max"
+			],
+			[
+				"f_",
+				"f_rotor_fill"
+			],
+			[
+				"m_motors",
+				"m_motors_tr"
+			],
+			[
+				"m_rot",
+				"m_rotor_coax_each"
+			],
+			[
+				"rotor",
+				"rotor_thickness"
+			],
+			[
+				"m_motor",
+				"m_motor_coax_each"
+			],
+			[
+				"V_io",
+				"V_in_coax"
+			],
+			[
+				"n_B",
+				"n_B_coax"
+			],
+			[
+				"T_coa",
+				"T_coax_each"
+			],
+			[
+				"X",
+				"XRotorTSSLimitMach"
+			],
+			[
+				"surface",
+				"surfaceArea"
+			],
+			[
+				"c_",
+				"c_mean"
+			],
+			[
+				"Apla",
+				"A_planform_ref"
+			],
+			[
+				"c_mean",
+				"c_mean_ref"
+			],
+			[
+				"V",
+				"V_in"
+			],
+			[
+				"inc",
+				"inc_ideal"
+			],
+			[
+				"w_",
+				"w_max"
+			],
+			[
+				"tssLimit",
+				"tssLimitAdv"
+			],
+			[
+				"inc_",
+				"inc_stall"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"tbo",
+				"tbodyHashtag"
+			],
+			[
+				"has",
+				"hashtagsTable"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/james/Developer/IoC/notes.txt",
+			"settings":
+			{
+				"buffer_size": 734,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "CSS Flexbox"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Stylus/Stylus.sublime-build",
+					""
+				],
+				[
+					"Packages/Stylus/Stylus.sublime-build",
+					"compress"
+				]
+			],
+			[
+				"Packages/Stylus/Stylus.sublime-build",
+				"compress"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ayu",
+				"ayu: Activate theme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"snippet",
+				"Snippet: HTML - Script"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indent XML"
+			],
+			[
+				"indent",
+				"Indent XML"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/james/Developer/Web Projects/portfolio-2020b"
+	],
+	"file_history":
+	[
+		"/Users/james/Developer/IoC/jekyll-test-site/about.markdown",
+		"/Users/james/Developer/IoC/jekyll-test-site/_layouts/default.html",
+		"/Users/james/Developer/IoC/jekyll-test-site/_config.yml",
+		"/Users/james/Developer/IoC/jekyll-test-site/index.html",
+		"/Users/james/Developer/IoC/setup-jekyll.sh",
+		"/Users/james/Developer/IoC/jekyll-notes.txt",
+		"/Users/james/Developer/IoC/jekyll-test-site/_posts/2020-02-10-welcome-to-jekyll.markdown",
+		"/private/var/folders/6_/mx_d7ckx7bv0fcspnfm4tb0r0000gn/T/fz3temp-2/listing_contacts.twig",
+		"/private/var/folders/6_/mx_d7ckx7bv0fcspnfm4tb0r0000gn/T/fz3temp-2/_aa_content.twig",
+		"/private/var/folders/6_/mx_d7ckx7bv0fcspnfm4tb0r0000gn/T/fz3temp-2/_social_media_panel.twig",
+		"/Users/james/Developer/Web Projects/portfolio-2020/package.json",
+		"/Users/james/Developer/Web Projects/portfolio-2020/pacakge.json",
+		"/Users/james/Developer/Web Projects/optimap/style.css",
+		"/Users/james/Developer/Web Projects/optimap/notes.txt",
+		"/Users/james/Developer/Web Projects/optimap/config.json",
+		"/Users/james/Developer/Web Projects/optimap/core.js",
+		"/Users/james/Developer/Web Projects/optimap/index.html",
+		"/Users/james/Developer/Web Projects/auto-dj/index.css",
+		"/Users/james/Developer/Web Projects/auto-dj/lib/joesulli-beat-detect.js",
+		"/Users/james/Developer/Web Projects/auto-dj/index.js",
+		"/Users/james/Developer/Web Projects/auto-dj/index.html",
+		"/Users/james/Developer/Web Projects/Jukebox/Jukebox.sublime-project",
+		"/Users/james/Developer/Web Projects/optimap/dat/city.list.json",
+		"/Users/james/Developer/Web Projects/optimap/dat/city.list.min.json",
+		"/private/etc/apache2/httpd.conf",
+		"/private/etc/apache2/vhosts/dev.conf",
+		"/private/etc/apache2/vhosts/_default.conf",
+		"/private/etc/hosts",
+		"/Users/james/Desktop/_default.conf",
+		"/Users/james/Downloads/city.list.json",
+		"/Users/james/Developer/Web Projects/sve/eve.html",
+		"/Users/james/Developer/Web Projects/sve/sve.js",
+		"/Users/james/Library/Application Support/Sublime Text 3/Packages/User/HTML Structure.sublime-snippet",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Plugins/Fortran/nnls.f",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Plugins/Fortran/compile.sh",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Core.cs",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Thruster.cs",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Ship.cs",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/NumMath.cs",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Fortran/nnls.f",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Fortran/compile.sh",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Fortran/compile-g77.sh",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/Matrix.cs",
+		"/Users/james/Developer/Unity Projects 2019/Project Astra/Assets/Scripts/MouseOrbitImproved.cs",
+		"/Users/james/OneDrive - University of Surrey/Year M/FYP/Python/Sizing/size.py",
+		"/Users/james/Dropbox/University/Y4 Individual Project/Python/analyse.py",
+		"/Users/james/Dropbox/University/Y4 Individual Project/Python/Sizing/size.py",
+		"/Users/james/Dropbox/University/Y4 Individual Project/naca4412.txt",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/www/css/theme.less",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/www/css/core.less",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/notes.txt",
+		"/Users/james/Dropbox/University/Y4 Individual Project/naca4412.dat.txt",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/config.xml",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/www/js/index.js",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/www/index.html",
+		"/Users/james/Library/Mobile Documents/com~apple~CloudDocs/Truth & Lies 2019 Details",
+		"/Users/james/Developer/Truth & Lies/truth-and-lies-app/config.xml",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/Truth & Lies 2019",
+		"/Users/james/Library/Application Support/Sublime Text 3/Packages/Less2Css/less2css.sublime-settings",
+		"/Users/james/Library/Application Support/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/Users/james/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/james/Library/Application Support/Sublime Text 3/Packages/User/CleanCSS.sublime-settings",
+		"/Users/james/Library/Application Support/Sublime Text 3/Packages/CleanCSS/CleanCSS.sublime-settings",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/www/css/theme.css",
+		"/Users/james/Developer/Truth & Lies/TruthAndLies2019/run.command",
+		"/Users/james/Developer/Truth & Lies/truth-and-lies-app/www/index.js",
+		"/Users/james/Developer/Truth & Lies/truth-and-lies-app/www/index.html",
+		"/Users/james/Developer/Web Projects/HashDump/js/core.js",
+		"/Users/james/Library/Application Support/Steam/steamapps/common/Kerbal Space Program/saves/Moderate 1-5-0/quicksave.sfs",
+		"/Users/james/Developer/Web Projects/HashDump/css/styles.css",
+		"/Users/james/Developer/Web Projects/HashDump/index.html",
+		"/Users/james/Developer/Web Projects/HashDump/c/ss"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/james/Developer/IoC/notes.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 734,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								720,
+								720
+							]
+						],
+						"settings":
+						{
+							"auto_name": "CSS Flexbox",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 30.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Stylus/Stylus.sublime-build",
+	"project": "Portfolio 2020b.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 179.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
