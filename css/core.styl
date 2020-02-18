@@ -59,7 +59,7 @@ html, body
 body
 	font-family: 'Nunito', sans-serif
 	background-color: brand-dark
-	color: white
+	color: brand-lighter
 	
 	// Centre slide container
 	display: flex
@@ -107,13 +107,62 @@ body
 		h2
 			opacity: 0.6
 			
-		ul
+		ul.skills
 			margin: 1rem 0
 			list-style: none
 			
 			li
 				display: inline-block
 				margin-right: 1rem
+				
+		.socials
+			margin-top: 1rem
+
+			> a
+				display: inline-block
+				font-size: 1.5rem
+				padding: 0.5rem 0.9rem
+				background-color: darken(brand-neutral, 15%)
+				margin-bottom: 0.5rem
+				margin-right: 0.5rem
+				border-radius: 0.5rem
+
+				overflow: hidden
+
+				*
+					vertical-align: middle
+
+					// Match font sizes of icon and text
+					font-size: inherit
+					
+				span
+					transition: max-width 0.3s ease
+					display: inline-block
+					
+					// Stop text from wrapping
+					white-space: nowrap
+						
+					// Adjust for text gap around invisble span
+					margin-left: -6px
+					
+					// Hide
+					max-width: 0
+					opacity: 0
+				
+				transition: all 0.7s ease
+				&:hover
+					background-color: brand-lighter
+					color: brand-dark
+					
+					span
+						opacity: 1
+						
+						// Extra gap after icon
+						margin-left: 0.5rem
+						
+						// Accomodate maximum possible width
+						max-width: 150px
+						
 	
 	> footer
 		// Display above slide
@@ -128,10 +177,6 @@ body
 
 	// Show
 	opacity: 1
-	
-// .slide.hide
-// 	z-index: -1
-// 	display: none
 	
 .slide#landing
 	z-index: 0
