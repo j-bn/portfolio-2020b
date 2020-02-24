@@ -75,6 +75,17 @@ $(document).ready(function() {
 	// Hide invisible slides
 	$slides.each(hideIfTransparent);
 
+	// Open slides from URLs
+	// ---------------------
+
+	if(window.location.hash) {
+		// Remove hash character from string
+		var hash = window.location.hash.substring(1);
+
+		openSlide(window.location.hash);
+	}
+
+
 	// Slide management
 	// ----------------
 

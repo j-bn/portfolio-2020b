@@ -55,6 +55,7 @@ a
 
 html, body
 	height: 100%
+	scroll-behaviour: smooth
 
 body
 	font-family: 'Nunito', sans-serif
@@ -66,7 +67,7 @@ body
 	justify-content: center
 	
 #slide-container
-	max-width: 700px
+	max-width: 800px
 	
 	display: block
 	flex-grow: 1
@@ -213,8 +214,44 @@ body
 		
 		// Scale up without affecting layout
 		transform: scaleY(15)
+
+// Common block components
+
+.panel
+	background-color: white
+	padding: 1rem
+	border-radius: 0.5rem
+	display: block
+	background-color: white
+	background-size: cover
+	
+	text-shadow: 0 1px 1px rgba(black, 0.5)
+	box-shadow: 0 0.3rem 0.5rem rgba(black, 0.3)
+	
+	position: relative
+
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(black, 0.4)
+		border-radius: inherit
+		z-index: 1
 		
-		
+	*
+		// Move above background overlay
+		position: relative
+		z-index: 2
+
+.tag
+	padding: 0.2rem 0.5rem
+	background-color: rgba(black, 0.3)
+	border-radius: 0.3rem
+
+// [TODO] Combine with .block
 .masonry
 	margin-top: 1.5rem
 
@@ -238,5 +275,46 @@ body
 .loading
 	opacity: 0.5
 	
+ul.projects
+	list-style: none
+	margin: 1rem 0
+	
+	> li
+		@extend .panel
+		
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		align-content: flex-start
 
+		position: relative
+
+		cursor: pointer
+		
+		> h3
+			position: absolute
+			top: 50%
+
+		> h4
+			// opacity: 0.8
+		
+		ul
+			margin-top: 0.4rem
+			list-style: none
+			
+			> li
+				@extend .tag
+				display: inline-block
+				margin-right: 0.3rem
+	
+		> div
+			transition: all 0.3s ease
+			opacity: 0
+
+		&:hover
+			> h3
+				top: 0
+
+			> div
+				opacity: 1
 		

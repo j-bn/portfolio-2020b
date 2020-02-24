@@ -25,6 +25,7 @@ a {
 html,
 body {
   height: 100%;
+  scroll-behaviour: smooth;
 }
 body {
   font-family: 'Nunito', sans-serif;
@@ -34,7 +35,7 @@ body {
   justify-content: center;
 }
 #slide-container {
-  max-width: 700px;
+  max-width: 800px;
   display: block;
   flex-grow: 1;
   position: relative;
@@ -160,6 +161,41 @@ body {
 #jobs > a.selected.photo {
   color: #2ecc71;
 }
+.panel,
+ul.projects > li {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: block;
+  background-color: #fff;
+  background-size: cover;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.3);
+  position: relative;
+}
+.panel::after,
+ul.projects > li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: inherit;
+  z-index: 1;
+}
+.panel *,
+ul.projects > li * {
+  position: relative;
+  z-index: 2;
+}
+.tag,
+ul.projects > li ul > li {
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 0.3rem;
+}
 .masonry {
   margin-top: 1.5rem;
   columns: 6 200px;
@@ -181,4 +217,38 @@ body {
 }
 .loading {
   opacity: 0.5;
+}
+ul.projects {
+  list-style: none;
+  margin: 1rem 0;
+}
+ul.projects > li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  position: relative;
+  cursor: pointer;
+}
+ul.projects > li > h3 {
+  position: absolute;
+  top: 50%;
+}
+ul.projects > li ul {
+  margin-top: 0.4rem;
+  list-style: none;
+}
+ul.projects > li ul > li {
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+ul.projects > li > div {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+ul.projects > li:hover > h3 {
+  top: 0;
+}
+ul.projects > li:hover > div {
+  opacity: 1;
 }
