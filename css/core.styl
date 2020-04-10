@@ -219,6 +219,8 @@ body
 
 .panel
 	background-color: white
+	background-position: center
+	background-size: cover
 	padding: 1rem
 	border-radius: 0.5rem
 	display: block
@@ -286,14 +288,37 @@ ul.projects
 		flex-direction: column
 		align-items: flex-start
 		align-content: flex-start
+		
+		margin-bottom: 1rem
 
 		position: relative
 
 		cursor: pointer
 		
+		// Apply to both heading and pseudo-element
+		> h3, h3::after {
+			transition: all 0.2s ease
+		}
+		
 		> h3
-			position: absolute
-			top: 50%
+			position: relative
+			transform: translateX(-50%) scale(1.5)
+			transform-origin: top
+			left: 50%
+			top: 1.8rem
+			font-size: 2em
+				
+		> h3::after
+			content '\f35d'
+			font-family: 'Font Awesome 5 Free'
+			opacity: 0
+			margin-left: 1rem
+			font-size: 0.7em
+			vertical-align: 10%
+			
+			// Stop adding to block size when hidden
+			display: inline-block
+			width: 0
 
 		> h4
 			// opacity: 0.8
@@ -313,7 +338,14 @@ ul.projects
 
 		&:hover
 			> h3
+				// Reset to standard position and size
+				transform: translateX(0) scale(1)
+				left: 0
 				top: 0
+				margin-left: 0
+				
+			> h3::after
+				opacity: 0.5
 
 			> div
 				opacity: 1

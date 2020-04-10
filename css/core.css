@@ -164,6 +164,8 @@ body {
 .panel,
 ul.projects > li {
   background-color: #fff;
+  background-position: center;
+  background-size: cover;
   padding: 1rem;
   border-radius: 0.5rem;
   display: block;
@@ -227,12 +229,31 @@ ul.projects > li {
   flex-direction: column;
   align-items: flex-start;
   align-content: flex-start;
+  margin-bottom: 1rem;
   position: relative;
   cursor: pointer;
 }
+ul.projects > li > h3,
+ul.projects > li h3::after {
+  transition: all 0.2s ease;
+}
 ul.projects > li > h3 {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  transform: translateX(-50%) scale(1.5);
+  transform-origin: top;
+  left: 50%;
+  top: 1.8rem;
+  font-size: 2em;
+}
+ul.projects > li > h3::after {
+  content: '\f35d';
+  font-family: 'Font Awesome 5 Free';
+  opacity: 0;
+  margin-left: 1rem;
+  font-size: 0.7em;
+  vertical-align: 10%;
+  display: inline-block;
+  width: 0;
 }
 ul.projects > li ul {
   margin-top: 0.4rem;
@@ -247,7 +268,13 @@ ul.projects > li > div {
   opacity: 0;
 }
 ul.projects > li:hover > h3 {
+  transform: translateX(0) scale(1);
+  left: 0;
   top: 0;
+  margin-left: 0;
+}
+ul.projects > li:hover > h3::after {
+  opacity: 0.5;
 }
 ul.projects > li:hover > div {
   opacity: 1;

@@ -407,43 +407,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Users/james/Developer/IoC/notes.txt",
-			"settings":
-			{
-				"buffer_size": 814,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "CSS Flexbox"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 5862,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/main.js",
-			"settings":
-			{
-				"buffer_size": 3634,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/core.styl",
-			"settings":
-			{
-				"buffer_size": 3959,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -544,6 +507,10 @@
 	],
 	"file_history":
 	[
+		"/Users/james/Developer/Web Projects/portfolio-2020b/css/core.styl",
+		"/Users/james/Developer/Web Projects/portfolio-2020b/js/main.js",
+		"/Users/james/Developer/Web Projects/portfolio-2020b/index.html",
+		"/Users/james/Developer/IoC/notes.txt",
 		"/Users/james/Developer/Web Projects/portfolio-2020b/css/",
 		"/Users/james/Developer/IoC/jekyll-issue/setup-jekyll.sh",
 		"/Users/james/Developer/Web Projects/portfolio-2020b/test.html",
@@ -625,7 +592,7 @@
 	],
 	"find":
 	{
-		"height": 95.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -639,6 +606,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"div",
 			"</span>",
 			"<span>",
 			"<ul>",
@@ -673,131 +641,14 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/james/Developer/IoC/notes.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								789,
-								789
-							]
-						],
-						"settings":
-						{
-							"auto_name": "CSS Flexbox",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 35.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5862,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5457,
-								5457
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2806.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3634,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								290,
-								290
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 188.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "css/core.styl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3959,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1924,
-								1924
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Stylus/Stylus.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2010.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 73.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -838,7 +689,7 @@
 	"project": "Portfolio 2020b.sublime-project",
 	"replace":
 	{
-		"height": 142.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -1,6 +1,8 @@
 const instaAccessToken = '1988010788.51b09fc.6b4813c0e304457c820ed71771800201';
 const instaUserID = '1988010788';
 
+const eventsTransitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
+
 // Utility functions
 // -----------------
 
@@ -65,12 +67,7 @@ $(document).ready(function() {
 	});
 
 	// Only fire on bubbled-up events from slides themselves
-	$slideContainer
-	.on('transitionend', '.slide', hideIfTransparent)
-	.on('transitionend', '#jobs > a', function(event) {
-		// Block job button events from propograting up to slide level
-		event.stopPropagation();
-	});
+	$slideContainer.on(eventsTransitionEnd, '.slide', hideIfTransparent);
 
 	// Hide invisible slides
 	$slides.each(hideIfTransparent);
@@ -94,8 +91,11 @@ $(document).ready(function() {
 	});
 
 	function closeSlides() {
-		// Deselect all slides§
+		// Deselect all slides
 		$slides.removeClass('active');
+
+		// Reset URL hash
+		window.location.hash = '';
 
 		// Do not bother resetting job buttons here because their fade out transition would be visible as the slide fades out
 	}
@@ -104,6 +104,9 @@ $(document).ready(function() {
 		console.log('Opening slide ' + slideSelector);
 
 		closeSlides();
+
+		// Set URL hash
+		window.location.hash = slideSelector;
 
 		// Select new slide
 		$(slideSelector).show().addClass('active');
@@ -115,22 +118,35 @@ $(document).ready(function() {
 		$jobAs.removeClass('selected');
 	}
 
-	function hideIfTransparent() {
+	function hideIfTransparent(event) {
 		const $this = $(this);
 
-		const openTag = $this[0].outerHTML.split('>')[0] + '>';
-		console.log('Checking ' + openTag + ' for transparancy...');
+		// Only operate on non-bubbled events or direct
+		// (event will usually be an integer)
+		if(typeof event != 'object' || event.target == this) {
+			const openTag = $this[0].outerHTML.split('>')[0] + '>';
+			console.log('Checking ' + openTag + ' for transparancy...');
 
-		// Do not fire on intermediate transition ends
-		const opacity = parseFloat($this.css('opacity'));
-		// console.log(opacity + ':' + typeof opacity)
-		if(opacity == 0) {
-			// Fully hide slides once fade out complete
-			console.log(' hiding');
-			$this.hide();
-		} else if (opacity == 1) {
-			// Reset job buttons once fade in complete
-			resetJobButtons();
+			// job button gets .selected
+			// -> openSlide()
+			// close all other slides by removing .active
+			// un-hide new slide
+			// add .active
+
+			// on transition end from a slide
+			// -> hideIfTransparent()
+			// 
+
+			// Do not fire on intermediate transition ends
+			const opacity = parseFloat($this.css('opacity'));
+			if(opacity == 1 && $this.hasClass('active')) {
+				// Reset job buttons once fade in complete
+				resetJobButtons();
+			} else if(opacity == 0 && $this.attr('id') != 'landing') {
+				// Fully hide slides once fade out complete
+				console.log(' hiding slide');
+				$this.hide();
+			}
 		}
 	}
 
