@@ -16,6 +16,13 @@ function allImagesLoaded(el) {
 	return true;
 }
 
+// Loader
+// ------
+
+$(window).on('load', function() {
+	$('body > .loader').addClass('loaded');
+});
+
 // Instafeed
 // ---------
 
@@ -28,28 +35,44 @@ var feed = new Instafeed({
 });
 feed.run();
 
-$(document).ready(function() {
-	// Loaders
-	// -------
+// Projects
+// --------
 
-	$('.to-load')
-	.addClass('loading')
+function applyProjectsTitleAlign() {
+	// Should match transform scale in CSS
+	var scaleFactor = 2;
+
+	var nextID = 0;
+
+	$('.projects > li')
 	.each(function() {
-		console.log('Checking');
+		var $panel = $(this), $title = $('h3', this);
 
-		if(allImagesLoaded(this)) {
-			console.log('Already loaded');
-			onLoadComplete(this);
-		} else {
-			$(this).on('load', onLoadComplete);
-		}
+		// Measures content height
+		var boxHeight = $panel.height();
+
+		// Measures outer height (including padding and border but by default not margin)
+		// before transform is applied
+		var titleHeight = $title.outerHeight();
+		var titleHeightScaled = titleHeight * scaleFactor;
+
+		var yOffset = (boxHeight - titleHeightScaled) / 2;
+
+		// console.log(`${boxHeight} ${titleHeight}`);
+
+		var className = 'project-' + nextID;
+		$panel.addClass(className);
+		nextID ++;
+
+		var css = `.${className} > h3 { top: ${yOffset}px; }`;
+		$('style').append(css);
 	});
+}
 
-	function onLoadComplete(container) {
-		// The load event will be called the moment all child elements of the listened element are loaded. in your case this might be before the ready event is called
-		console.log('Loaded');
-		$(container).removeClass('loading');
-	}
+$(document).ready(function() {
+
+	// Event listeners
+	// ---------------
 
 	// Constant jQuery objects
 	const $jobAs = $('#jobs > a');
@@ -82,6 +105,21 @@ $(document).ready(function() {
 		openSlide(window.location.hash);
 	}
 
+	// External links
+	// --------------
+
+	$('.projects > li').click(function() {
+		var link = $(this).attr('data-href');
+
+		// Start effect
+		$('h3', this).addClass('after-expand');
+
+		// Go to link
+		window.location.href = 'external.html#' + link;
+
+		// Block bubbling and defaults
+		return false;
+	})
 
 	// Slide management
 	// ----------------
@@ -110,6 +148,11 @@ $(document).ready(function() {
 
 		// Select new slide
 		$(slideSelector).show().addClass('active');
+
+		// Apply fixes reliant on being visible
+		if(slideSelector == '#web') {
+			applyProjectsTitleAlign();
+		}
 	}
 
 	function resetJobButtons() {	

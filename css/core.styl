@@ -14,6 +14,43 @@ jobs-expand-duration = 0.5s
 jobs-transition-duration = jobs-text-fade-duration + jobs-expand-duration
 slide-fade-duration = 0.4s
 
+project-hover-transition = all 0.7s ease
+
+// Utility classes
+// ---------------
+
+p.lead
+	font-size: 1.3rem
+	font-weight: 300
+	margin-bottom: 1rem
+	
+.box-shadow
+	box-shadow: 0 0.3rem 0.5rem rgba(black, 0.2)
+
+.text-shadow
+	// Relative to font size
+	text-shadow: 0 0.05em 0.1em rgba(black, 0.3)
+	
+.text-inset
+	text-shadow: 0 1px 0 white
+	
+.text-inset-alt
+	text-shadow: 0 -1px 0 rgba(black, 0.4)
+
+.after-expand::after
+	transition: all 0.5s linear !important
+	transform-origin: center
+	transform: scale(30)
+	opacity: 0 !important
+	border-radius: 50%
+	background-color: brand-web
+
+.click-through
+	pointer-events: none;
+
+// Mixins
+// ------
+
 job-color(prop)
 	&.web
 		{prop}: brand-web
@@ -23,6 +60,9 @@ job-color(prop)
 		
 	&.photo
 		{prop}: brand-photo
+
+// Reset
+// -----
 
 *
 	margin: 0
@@ -35,23 +75,9 @@ a
 	// Reset
 	color: inherit
 	text-decoration: none
-
-.slide a.close-button
-	opacity: 0.5
-	font-size: 2.5em
 	
-	position: absolute
-	top: slide-padding
-	right: slide-padding
-	
-	display: block
-	vertical-align: top
-	
-	&:hover
-		opacity: 0.7
-		
-	&:active
-		opacity: 0.9
+// Root styles
+// -----------
 
 html, body
 	height: 100%
@@ -65,7 +91,169 @@ body
 	// Centre slide container
 	display: flex
 	justify-content: center
+
+// Spinner
+// -------
+
+// From https://loading.io/css/
+
+spinner-size = 180px;
+spinner-weight = 20px;
+
+.lds-dual-ring {
+	width: spinner-size;
+	height: spinner-size;
 	
+	display: flex
+	justify-content: center
+	align-items: center
+}
+.lds-dual-ring:after {
+	content: " ";
+	display: block;
+	width: spinner-size - spinner-weight * 2;
+	height: spinner-size - spinner-weight * 2;
+	border-radius: 50%;
+	border: spinner-weight solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+// Loader
+// ------
+
+.loader
+	@extend .text-shadow
+
+	// Cover screen
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	
+	// Internal layout
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	
+	// Style
+	background-color: brand-dark
+	
+	// Overlay
+	pointer-events: none
+	z-index: 100
+	
+	// Fade out
+	transition: all 0.7s ease
+	&.loaded
+		opacity: 0
+		
+	// JS warning
+	&::after
+		content: 'Please check you are using a modern browser and have JavaScript enabled'
+		width: 15rem
+		text-align: center
+		margin-top: 2rem
+		
+		// Show after load should have completed
+		animation: delayed-fade-in 3s ease;
+		
+@keyframes delayed-fade-in
+	0%
+		opacity: 0
+		margin-top: -4rem
+	80%
+		opacity: 0
+		margin-top: -4rem
+	100%
+		opacity: 1
+		margin-top: 2rem
+	
+// Common block components
+// -----------------------
+
+.panel
+	@extend .text-shadow, .box-shadow
+
+	background-color: white
+	background-position: center
+	background-size: cover
+	padding: 1rem
+	border-radius: 0.5rem
+	display: block
+	background-color: white
+	background-size: cover
+	
+.bg-overlay
+	position: relative
+
+	// Background overlay
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(black, 0.35)
+		background: linear-gradient(to right, rgba(black, 0.8), rgba(black, 0));
+		border-radius: inherit
+		z-index: 1
+		
+		opacity: 0
+		transition: project-hover-transition
+		
+	*
+		// Move content above background overlay
+		position: relative
+		z-index: 2
+		
+
+.bg-overlay-activate
+	&::after
+		opacity: 1
+		
+
+.tag
+	padding: 0.2rem 0.5rem
+	background-color: rgba(black, 0.3)
+	border-radius: 0.3rem
+	
+
+// [TODO] Combine with .block??
+.masonry
+	margin-top: 1.5rem
+
+	columns: 6 200px
+	column-gap: 0.7rem
+	max-width: calc(100% + 5px)
+	margin-left: -5px
+		
+	> a
+		display: block
+		flex: 1 1 auto
+		margin-bottom: 0.4rem
+		
+		img
+			width: 100%
+			border-radius: 0.4rem
+			box-shadow: 0 1px 0.6rem rgba(black, 0.3)
+			background-color: white
+			padding: 0.3rem
+			
+// Slides
+// ------
+
 #slide-container
 	max-width: 800px
 	
@@ -99,6 +287,8 @@ body
 	transition: opacity slide-fade-duration ease
 
 	> article
+		@extend .text-shadow
+
 		padding: slide-padding
 		background-color: inherit
 		
@@ -129,6 +319,7 @@ body
 				border-radius: 0.5rem
 
 				overflow: hidden
+				text-shadow: none
 
 				*
 					vertical-align: middle
@@ -150,8 +341,10 @@ body
 					max-width: 0
 					opacity: 0
 				
-				transition: all 0.7s ease
-				&:hover
+				transition: project-hover-transition
+				&:hover	
+					@extend .text-inset
+
 					background-color: brand-lighter
 					color: brand-dark
 					
@@ -172,6 +365,23 @@ body
 		// Padding added by children
 		padding: 0
 		
+.slide a.close-button
+	opacity: 0.5
+	font-size: 2.5em
+	
+	position: absolute
+	top: slide-padding
+	right: slide-padding
+	
+	display: block
+	vertical-align: top
+	
+	&:hover
+		opacity: 0.7
+		
+	&:active
+		opacity: 0.9
+		
 .slide.active, .slide#landing
 	// Transition (fade in) with delay
 	transition-delay: jobs-transition-duration
@@ -184,10 +394,15 @@ body
 	
 	grid-template-rows: 1fr auto
 
+// Jobs Footer
+// -----------
+
 #jobs > a
+	@extend .text-inset-alt
+
 	display: block
 
-	color: white
+	color: brand-lighter
 	font-size: 1.5rem
 	font-weight: bold
 	text-align: left
@@ -211,78 +426,20 @@ body
 	&.selected
 		// Invisible text
 		job-color(color)
+		text-shadow: none
 		
 		// Scale up without affecting layout
 		transform: scaleY(15)
-
-// Common block components
-
-.panel
-	background-color: white
-	background-position: center
-	background-size: cover
-	padding: 1rem
-	border-radius: 0.5rem
-	display: block
-	background-color: white
-	background-size: cover
-	
-	text-shadow: 0 1px 1px rgba(black, 0.5)
-	box-shadow: 0 0.3rem 0.5rem rgba(black, 0.3)
-	
-	position: relative
-
-	&::after
-		content: ""
-		position: absolute
-		top: 0
-		bottom: 0
-		left: 0
-		right: 0
-		background-color: rgba(black, 0.4)
-		border-radius: inherit
-		z-index: 1
 		
-	*
-		// Move above background overlay
-		position: relative
-		z-index: 2
+// Projects
+// --------
 
-.tag
-	padding: 0.2rem 0.5rem
-	background-color: rgba(black, 0.3)
-	border-radius: 0.3rem
-
-// [TODO] Combine with .block
-.masonry
-	margin-top: 1.5rem
-
-	columns: 6 200px
-	column-gap: 0.7rem
-	max-width: calc(100% + 5px)
-	margin-left: -5px
-		
-	> a
-		display: block
-		flex: 1 1 auto
-		margin-bottom: 0.4rem
-		
-		img
-			width: 100%
-			border-radius: 0.4rem
-			box-shadow: 0 1px 0.6rem rgba(black, 0.3)
-			background-color: white
-			padding: 0.3rem
-
-.loading
-	opacity: 0.5
-	
 ul.projects
 	list-style: none
 	margin: 1rem 0
 	
 	> li
-		@extend .panel
+		@extend .panel, .bg-overlay
 		
 		display: flex
 		flex-direction: column
@@ -302,17 +459,15 @@ ul.projects
 		
 		> h3
 			position: relative
-			transform: translateX(-50%) scale(1.5)
+			transform: translateX(-50%) scale(1.8)
 			transform-origin: top
 			left: 50%
-			top: 1.8rem
 			font-size: 2em
 				
 		> h3::after
 			content '\f35d'
 			font-family: 'Font Awesome 5 Free'
 			opacity: 0
-			margin-left: 1rem
 			font-size: 0.7em
 			vertical-align: 10%
 			
@@ -331,12 +486,16 @@ ul.projects
 				@extend .tag
 				display: inline-block
 				margin-right: 0.3rem
+				margin-top: 0.5rem
 	
 		> div
 			transition: all 0.3s ease
 			opacity: 0
+			max-width: 70%
 
 		&:hover
+			@extend .bg-overlay-activate
+
 			> h3
 				// Reset to standard position and size
 				transform: translateX(0) scale(1)
@@ -344,9 +503,37 @@ ul.projects
 				top: 0
 				margin-left: 0
 				
+				// [TODO] Remove
+				// // Reset tag styling
+				// box-shadow: none
+				// color: inherit
+				// background-color: transparent
+				// padding: 0
+				
 			> h3::after
 				opacity: 0.5
+				margin-left: 1rem
 
 			> div
 				opacity: 1
-		
+
+// External
+// --------
+body#external
+	@extend .text-shadow
+
+	padding: 2rem
+	display: flex
+	flex-direction: column
+	
+	h2
+		font-size: 1rem
+		color: rgba(white, 0.5)
+
+iframe#portal
+	border: none
+	border-radius: 0.5rem
+	flex-grow: 1
+	width: 100%
+	margin-top: 1rem
+	box-shadow: 0 0.2rem 0.5rem rgba(black, 0.5)
