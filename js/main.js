@@ -225,7 +225,7 @@ $(document).ready(function() {
 	// Touchscreen pseudo-hover
 	// ------------------------
 
-	if(true || isTouchDevice) {
+	if(isTouchDevice) {
 		$(window).scroll(function() {
 			var scrollY = $(this).scrollTop();
 			var windowH = $(window).height();
