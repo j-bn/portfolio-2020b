@@ -225,7 +225,7 @@ $(document).ready(function() {
 	// Touchscreen pseudo-hover
 	// ------------------------
 
-	if(isTouchDevice) {
+	if(true || isTouchDevice) {
 		$(window).scroll(function() {
 			var scrollY = $(this).scrollTop();
 			var windowH = $(window).height();
@@ -247,15 +247,18 @@ $(document).ready(function() {
 					if(mode == "direct") {
 						regionYTop = $this.offset().top;
 						regionYBottom = regionYTop + $this.outerHeight();;
-					} else if(mode == "uniform") {
-						regionYTop = containerYTop + uniformH * i;
-						regionYBottom = containerYTop + uniformH * (i + 1);
+					} else {
+						var scale = mode == "uniform" ? 1 : parseFloat(mode);
+
+						var scaleShift = (scale - 1) * containerH / 2;
+
+						regionYTop = containerYTop - scaleShift + uniformH * i * scale;
+						regionYBottom = containerYTop - scaleShift + uniformH * (i + 1) * scale;
 					}
 
 					var simulateHover = midY >= regionYTop && midY <= regionYBottom;
 
-					console.log(uniformH);
-					console.log($container.attr('class') + ' ' + i + ': ' + regionYTop + ' - ' + regionYBottom);
+					// console.log($container.attr('class') + ' ' + i + ': ' + regionYTop + ' - ' + regionYBottom);
 
 					$this.toggleClass('touch-hover', simulateHover);
 				});
