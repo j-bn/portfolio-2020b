@@ -314,6 +314,7 @@ spinner-weight = 20px;
 			li
 				display: inline-block
 				margin-right: 1rem
+				margin-bottom: 0.15rem
 				
 		.socials
 			margin-top: 1rem
@@ -329,6 +330,9 @@ spinner-weight = 20px;
 
 				overflow: hidden
 				text-shadow: none
+					
+				// Stop text from wrapping
+				white-space: nowrap
 
 				*
 					vertical-align: middle
@@ -339,9 +343,6 @@ spinner-weight = 20px;
 				span
 					transition: max-width 0.3s ease
 					display: inline-block
-					
-					// Stop text from wrapping
-					white-space: nowrap
 						
 					// Adjust for text gap around invisble span
 					margin-left: -6px
@@ -351,7 +352,7 @@ spinner-weight = 20px;
 					opacity: 0
 				
 				transition: project-hover-transition
-				&:hover	
+				&:hover, &.touch-hover	
 					@extend .text-inset
 
 					background-color: brand-lighter
@@ -468,10 +469,23 @@ ul.projects
 		
 		> h3
 			position: relative
-			transform: translateX(-50%) scale(1.8)
+			transform: translateX(-50%) scale(2)
 			transform-origin: top
 			left: 50%
 			font-size: 2em
+			
+			// Compress text when wrapping lines (and compensate for lost margin)
+			line-height: 1
+			margin-bottom: 0.2rem
+			
+			max-width: 70%
+			
+			@media screen and (max-width: 600px)
+				// Disable (right align) 
+				transform: scale(1.4)
+				top: 1.5rem !important
+				left: 0
+				transform-origin: top left
 				
 		> h3::after
 			content '\f35d'
@@ -484,7 +498,8 @@ ul.projects
 			display: inline-block
 			width: 0
 
-		> h4
+		h4
+			margin-bottom: 0.6rem
 			// opacity: 0.8
 		
 		ul
@@ -500,24 +515,19 @@ ul.projects
 		> div
 			transition: all 0.3s ease
 			opacity: 0
-			max-width: 70%
+			
+			@media screen and (min-width: 600px)
+				max-width: 70%
 
-		&:hover
+		&:hover, &.touch-hover
 			@extend .bg-overlay-activate
 
 			> h3
 				// Reset to standard position and size
 				transform: translateX(0) scale(1)
 				left: 0
-				top: 0
+				top: 0 !important
 				margin-left: 0
-				
-				// [TODO] Remove
-				// // Reset tag styling
-				// box-shadow: none
-				// color: inherit
-				// background-color: transparent
-				// padding: 0
 				
 			> h3::after
 				opacity: 0.5

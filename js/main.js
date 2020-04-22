@@ -3,6 +3,8 @@ const instaUserID = '1988010788';
 
 const eventsTransitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
 
+const isTouchDevice = "ontouchstart" in window || navigator.msMaxTouchPoints;
+
 // Utility functions
 // -----------------
 
@@ -219,4 +221,45 @@ $(document).ready(function() {
 			}
 		}
 	});
+
+	// Touchscreen pseudo-hover
+	// ------------------------
+
+	if(true || isTouchDevice) {
+		$(window).scroll(function() {
+			var scrollY = $(this).scrollTop();
+			var windowH = $(window).height();
+			var midY = scrollY + windowH / 2;
+
+			$('[data-touch-hover]').each(function() {
+				var $container = $(this);
+				var mode = $container.attr('data-touch-hover');
+
+				var containerYTop = $container.offset().top;
+				var containerH = $container.height();
+				var containerN = $container.children().length;
+				var uniformH = containerH / containerN;
+
+				$container.children().each(function(i) {
+					var $this = $(this);
+
+					var regionYTop, regionYBottom;
+					if(mode == "direct") {
+						regionYTop = $this.offset().top;
+						regionYBottom = regionYTop + $this.outerHeight();;
+					} else if(mode == "uniform") {
+						regionYTop = containerYTop + uniformH * i;
+						regionYBottom = containerYTop + uniformH * (i + 1);
+					}
+
+					var simulateHover = midY >= regionYTop && midY <= regionYBottom;
+
+					console.log(uniformH);
+					console.log($container.attr('class') + ' ' + i + ': ' + regionYTop + ' - ' + regionYBottom);
+
+					$this.toggleClass('touch-hover', simulateHover);
+				});
+			});
+		});
+	}
 });
