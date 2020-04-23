@@ -128,7 +128,7 @@ $(document).ready(function() {
 		$('h3', this).addClass('after-expand');
 
 		// Go to link
-		window.location.href = 'external.html#' + link;
+		window.location.href = isTouchDevice ? link : 'external.html#' + link;
 
 		// Block bubbling and defaults
 		return false;
@@ -216,29 +216,28 @@ $(document).ready(function() {
 	// Modal
 	// -----
 
-	$('#instafeed').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by James Thornton</small>';
+	if(isTouchDevice) {
+		$('#instafeed').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			tLoading: 'Loading image #%curr%...',
+			mainClass: 'mfp-img-mobile',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			},
+			image: {
+				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+			},
+			callbacks: {
+				// Pull image URL from custom attribute
+				elementParse: function(item) {
+					item.src = item.el.attr('data-src');
+				}
 			}
-		},
-		callbacks: {
-			// Pull image URL from custom attribute
-			elementParse: function(item) {
-				item.src = item.el.attr('data-src');
-			}
-		}
-	});
+		});
+	}
 
 	// Touchscreen pseudo-hover
 	// ------------------------
