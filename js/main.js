@@ -84,8 +84,9 @@ $(document).ready(function() {
 	// Job buttons
 	$jobAs.click(function() {
 		// Change active slide
-		const slideSelector = $(this).attr('href');
-		openSlide(slideSelector);
+		// (no longer required because openSlide is called by hash change)
+		// const slideSelector = $(this).attr('href');
+		// openSlide(slideSelector);
 
 		// Apply select styles to job button
 		$(this).addClass('selected');
@@ -107,6 +108,16 @@ $(document).ready(function() {
 		openSlide(window.location.hash);
 	}
 
+	// Navigation / history / back button
+	$(window).on('hashchange', function() {
+		var hash = window.location.hash;
+		if(hash == "#") {
+			closeSlides();
+		} else {
+			openSlide(hash);
+		}
+	});
+
 	// External links
 	// --------------
 
@@ -127,15 +138,16 @@ $(document).ready(function() {
 	// ----------------
 
 	$('a.close-button').click(function() {
+		window.location.hash = '';
 		closeSlides();
 	});
 
 	function closeSlides() {
+		// Show landing slide
+		$('.slide#landing').show();
+
 		// Deselect all slides
 		$slides.removeClass('active');
-
-		// Reset URL hash
-		window.location.hash = '';
 
 		// Do not bother resetting job buttons here because their fade out transition would be visible as the slide fades out
 	}
@@ -144,9 +156,6 @@ $(document).ready(function() {
 		console.log('Opening slide ' + slideSelector);
 
 		closeSlides();
-
-		// Set URL hash
-		window.location.hash = slideSelector;
 
 		// Select new slide
 		$(slideSelector).show().addClass('active');
@@ -169,6 +178,7 @@ $(document).ready(function() {
 		// Only operate on non-bubbled events or direct
 		// (event will usually be an integer)
 		if(typeof event != 'object' || event.target == this) {
+
 			const openTag = $this[0].outerHTML.split('>')[0] + '>';
 			console.log('Checking ' + openTag + ' for transparancy...');
 
@@ -185,13 +195,21 @@ $(document).ready(function() {
 			// Do not fire on intermediate transition ends
 			const opacity = parseFloat($this.css('opacity'));
 			if(opacity == 1 && $this.hasClass('active')) {
+
 				// Reset job buttons once fade in complete
 				resetJobButtons();
+
+				// Hide landing slide once fade in complete
+				$('.slide#landing').hide();
+
 			} else if(opacity == 0 && $this.attr('id') != 'landing') {
+
 				// Fully hide slides once fade out complete
 				console.log(' hiding slide');
 				$this.hide();
+
 			}
+
 		}
 	}
 

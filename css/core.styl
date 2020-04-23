@@ -101,6 +101,14 @@ body
 	// Centre slide container
 	display: flex
 	justify-content: center
+	
+h1, h2, h3, h4, h5, h6
+	line-height: 1.1
+	margin-bottom: 0.2em
+	
+p
+	line-height: 1.3
+	
 
 // Spinner
 // -------
@@ -273,6 +281,11 @@ spinner-weight = 20px;
 	// Root for slide positioning
 	position: relative
 	
+.slide:not(#landing)
+	h1, h2
+		// Stop overlaping close close closebutton
+		max-width: 70%
+
 .slide
 	background-color: brand-neutral
 	job-color(background-color)
@@ -310,10 +323,6 @@ spinner-weight = 20px;
 
 		h2
 			opacity: 0.6
-			
-		h1, h2
-			// Stop overlaping close close closebutton
-			max-width: 70%
 			
 		ul.skills
 			margin: 1rem 0
@@ -388,7 +397,7 @@ spinner-weight = 20px;
 	font-size: 2.5em
 	
 	position: absolute
-	top: slide-padding
+	top: slide-padding - 0.5em
 	right: slide-padding
 	
 	display: block
