@@ -15,7 +15,8 @@ jobs-expand-duration = 0.5s
 jobs-transition-duration = jobs-text-fade-duration + jobs-expand-duration
 slide-fade-duration = 0.4s
 
-project-hover-transition = all 0.7s ease
+project-hover-transition = all 0.4s ease
+socials-hover-transition = all 0.7s ease
 
 // Utility classes
 // ---------------
@@ -368,7 +369,7 @@ spinner-weight = 20px;
 					max-width: 0
 					opacity: 0
 				
-				transition: project-hover-transition
+				transition: socials-hover-transition
 				&:hover, &.touch-hover	
 					@extend .text-inset
 
@@ -481,7 +482,7 @@ ul.projects
 		
 		// Apply to both heading and pseudo-element
 		> h3, h3::after {
-			transition: all 0.2s ease
+			transition: project-hover-transition
 		}
 		
 		> h3

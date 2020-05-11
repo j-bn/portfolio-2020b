@@ -23,19 +23,22 @@ function allImagesLoaded(el) {
 
 $(window).on('load', function() {
 	$('body > .loader').addClass('loaded');
+	postLoad();
 });
 
 // Instafeed
 // ---------
 
-var feed = new Instafeed({
-	get: 'user',
-	userId: instaUserID,
-	accessToken: instaAccessToken,
-	resolution: 'standard_resolution',
-	template: '<a href="{{link}}" data-src="{{image}}"><img src="{{image}}" /></a>'
-});
-feed.run();
+function initInstafeed() {
+	var feed = new Instafeed({
+		get: 'user',
+		userId: instaUserID,
+		accessToken: instaAccessToken,
+		resolution: 'standard_resolution',
+		template: '<a href="{{link}}" data-src="{{image}}"><img src="{{image}}" /></a>'
+	});
+	feed.run();
+}
 
 // Projects
 // --------
@@ -283,3 +286,9 @@ $(document).ready(function() {
 		});
 	}
 });
+
+// Post-load
+
+function postLoad() {
+	initInstafeed();
+}
