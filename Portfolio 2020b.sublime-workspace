@@ -473,7 +473,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 8417,
+				"buffer_size": 8416,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -482,7 +482,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 6816,
+				"buffer_size": 6923,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -491,7 +491,7 @@
 			"file": "css/core.styl",
 			"settings":
 			{
-				"buffer_size": 9544,
+				"buffer_size": 9596,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -699,6 +699,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"transition",
 			"hideIf",
 			"max-width",
 			"el",
@@ -755,7 +756,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -821,15 +822,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8417,
+						"buffer_size": 8416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1063,
-								1063
+								4674,
+								4674
 							]
 						],
 						"settings":
@@ -838,7 +839,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 509.0,
+						"translation.y": 3629.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -850,27 +851,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6816,
+						"buffer_size": 6923,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2975,
-								2975
+								580,
+								580
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4117.0,
+						"translation.y": 734.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -879,15 +881,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9544,
+						"buffer_size": 9596,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8243,
-								8221
+								5205,
+								5205
 							]
 						],
 						"settings":
@@ -896,10 +898,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 11295.0,
+						"translation.y": 6397.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -968,7 +970,7 @@
 		[
 			[
 				"",
-				"~/Developer/Unity Projects 2020+/Project Entropy/Project Entropy.sublime-project"
+				"~/Developer/Web Projects/tetebatu-jekyll/Tetebatu (Jekyll).sublime-project"
 			]
 		],
 		"width": 380.0
