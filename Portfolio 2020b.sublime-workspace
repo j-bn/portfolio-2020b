@@ -473,7 +473,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 8416,
+				"buffer_size": 9074,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -685,7 +685,7 @@
 	],
 	"find":
 	{
-		"height": 54.0
+		"height": 32.0
 	},
 	"find_in_files":
 	{
@@ -756,7 +756,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -822,15 +822,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8416,
+						"buffer_size": 9074,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4674,
-								4674
+								4596,
+								4596
 							]
 						],
 						"settings":
@@ -839,10 +839,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3629.0,
+						"translation.y": 3830.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -869,10 +869,10 @@
 							"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 734.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -901,7 +901,7 @@
 						"translation.y": 6397.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
