@@ -1,4 +1,5 @@
-const instaAccessToken = '1988010788.51b09fc.6b4813c0e304457c820ed71771800201';
+//const instaAccessToken = '1988010788.51b09fc.6b4813c0e304457c820ed71771800201';
+const instaStartingToken = 'IGQVJXRWxiWlVQd0g0RWlaYXpSbDVYaWMwN0w1cEx4YVZAHaXpoamxxeU1fZAlRrdloxMHEwRGhNMDRiNjJ3cXhjMnZAqdlQwanFCSUNrck92aGN3QXR1cEtldkl0M0lKWjlSWnMyd1ZA0N2I2NDliOW9FdAZDZD';
 const instaUserID = '1988010788';
 
 const eventsTransitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
@@ -30,10 +31,14 @@ $(window).on('load', function() {
 // ---------
 
 function initInstafeed() {
+	const instaToken = instaStartingToken;
+
+	console.log('Setting up Instafeed with live token:', instaToken);
+
 	var feed = new Instafeed({
+		accessToken: instaToken, // InstagramToken, // Via Heroku app when fixed
 		get: 'user',
 		userId: instaUserID,
-		accessToken: instaAccessToken,
 		resolution: 'standard_resolution',
 		template: '<a href="{{link}}" data-src="{{image}}"><img src="{{image}}" /></a>'
 	});
