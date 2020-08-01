@@ -31,12 +31,12 @@ $(window).on('load', function() {
 // ---------
 
 function initInstafeed() {
-	const instaToken = instaStartingToken;
+	const instaToken = InstagramToken;
 
 	console.log('Setting up Instafeed with live token:', instaToken);
 
 	var feed = new Instafeed({
-		accessToken: instaToken, // InstagramToken, // Via Heroku app when fixed
+		accessToken: instaToken,
 		get: 'user',
 		userId: instaUserID,
 		resolution: 'standard_resolution',
