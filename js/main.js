@@ -1,5 +1,5 @@
 //const instaAccessToken = '1988010788.51b09fc.6b4813c0e304457c820ed71771800201';
-const instaStartingToken = 'IGQVJXRWxiWlVQd0g0RWlaYXpSbDVYaWMwN0w1cEx4YVZAHaXpoamxxeU1fZAlRrdloxMHEwRGhNMDRiNjJ3cXhjMnZAqdlQwanFCSUNrck92aGN3QXR1cEtldkl0M0lKWjlSWnMyd1ZA0N2I2NDliOW9FdAZDZD';
+const instaStartingToken = 'IGQVJWVHNvMEtQdVN1eDItWWNLRzJiNE1TYlp6emxJaWgtMEJMbFZAaTnJDb3BwVFpISmJYWTBINENDaFhyYjNvWXRVQzBaVDJUMUUtYVk2dmZAWN0x4R3pCTlY5eWtaVDVrWWMwRTJJZA2VMOV9YdGg5XwZDZD';
 const instaUserID = '1988010788';
 
 const eventsTransitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
@@ -31,7 +31,8 @@ $(window).on('load', function() {
 // ---------
 
 function initInstafeed() {
-	const instaToken = InstagramToken;
+	// const instaToken = InstagramToken;
+	const instaToken = instaStartingToken;
 
 	console.log('Setting up Instafeed with live token:', instaToken);
 
