@@ -1,5 +1,5 @@
 //const instaAccessToken = '1988010788.51b09fc.6b4813c0e304457c820ed71771800201';
-const instaStartingToken = 'IGQVJWVHNvMEtQdVN1eDItWWNLRzJiNE1TYlp6emxJaWgtMEJMbFZAaTnJDb3BwVFpISmJYWTBINENDaFhyYjNvWXRVQzBaVDJUMUUtYVk2dmZAWN0x4R3pCTlY5eWtaVDVrWWMwRTJJZA2VMOV9YdGg5XwZDZD';
+const instaStartingToken = 'IGQVJXNmI5NXREdEl5aVNGV0tLOEh1VUIyZAjRZAOWFDNHc0WFR6V0REdFVYZADNhbTBTOGdRRjl4YkNBSGtMUlNCZAXdzZAzNKWEVvMW5Xd09KU1ZA2VVk5SzZAZAVDRUaWZAJaGg4aDlyU1NyQXRtazljUHZAmMAZDZD';
 const instaUserID = '1988010788';
 
 const eventsTransitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
